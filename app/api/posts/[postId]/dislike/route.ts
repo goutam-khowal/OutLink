@@ -5,12 +5,13 @@ import { NextRequest, NextResponse } from "next/server";
 // POST DISLIKES
 export const POST = async (
   req: NextRequest,
-  { params }: { params: { postId: string } }
+  { params }: { params: Promise<{ postId: string }> }
 ) => {
   try {
+    const { postId } = await params;
     await connectDB();
     const userId = await req.json();
-    const post = await Post.findById({ _id: params.postId });
+    const post = await Post.findById({ _id: postId });
     if (!post) return NextResponse.json({ error: "Post not found." });
     await Post.updateOne({ $pull: { likes: userId } });
     return NextResponse.json({ message: "Post disliked successfully." });

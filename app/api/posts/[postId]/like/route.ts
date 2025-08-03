@@ -5,11 +5,12 @@ import { NextRequest, NextResponse } from "next/server";
 // GET LIKES
 export const GET = async (
   req: NextRequest,
-  { params }: { params: { postId: string } }
+  { params }: { params: Promise<{ postId: string }> }
 ) => {
   try {
+    const { postId } = await params;
     await connectDB();
-    const post = await Post.findById({ _id: params.postId });
+    const post = await Post.findById({ _id: postId });
     if (!post) return NextResponse.json({ error: "Post not found." });
 
     return NextResponse.json(post.likes);
@@ -21,12 +22,13 @@ export const GET = async (
 // POST LIKES
 export const POST = async (
   req: NextRequest,
-  { params }: { params: { postId: string } }
+  { params }: { params: Promise<{ postId: string }> }
 ) => {
   try {
+    const { postId } = await params;
     await connectDB();
     const userId = await req.json();
-    const post = await Post.findById({ _id: params.postId });
+    const post = await Post.findById({ _id: postId });
     if (!post) return NextResponse.json({ error: "Post not found." });
     await Post.updateOne({ $addToSet: { likes: userId } });
     return NextResponse.json({ message: "Post liked successfully." });

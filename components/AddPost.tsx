@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import ProfilePhoto from "./shared/ProfilePhoto";
 import { Input } from "./ui/input";
 import AddPostDialogue from "./AddPostDialogue";
-import { User } from "@clerk/nextjs/server";
 
-const AddPost = ({ user }: { user: User }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const AddPost = ({ user }: { user: any }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   function inputHandler() {
     setIsOpen(true);

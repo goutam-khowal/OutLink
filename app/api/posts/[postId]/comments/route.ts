@@ -5,11 +5,12 @@ import { NextRequest, NextResponse } from "next/server";
 // Fetch all comments
 export const GET = async (
   req: NextRequest,
-  { params }: { params: { postId: string } }
+  { params }: { params: Promise<{ postId: string }> }
 ) => {
   try {
+    const { postId } = await params;
     await connectDB();
-    const post = Post.findById({ _id: params.postId });
+    const post = Post.findById({ _id: postId });
     if (!post) return NextResponse.json({ error: "Post not found." });
 
     const comments = await post.populate({
