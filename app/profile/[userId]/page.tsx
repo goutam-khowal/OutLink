@@ -4,18 +4,16 @@ import UserProfileHeader from "@/components/UserProfileHeader";
 import { getAllPostAction } from "@/lib/serveractions";
 import { IPost } from "@/models/post.model";
 
-interface Props {
-  params: {
-    userId: string;
-  };
-}
+type PageProps = {
+  params: { userId: string };
+};
 
 async function filteredPost(userId: string) {
   const posts = await getAllPostAction();
   return posts.filter((post: IPost) => post.user.userId === userId);
 }
 
-const UserProfile = async ({ params }: Props) => {
+const UserProfile = async ({ params }: PageProps) => {
   const userPosts = await filteredPost(params.userId);
   console.log(params.userId);
   console.log(typeof userPosts);
