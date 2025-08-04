@@ -70,8 +70,8 @@ _Provide demo/test credentials here if set up._
 
 ## 📜 Submission
 
-- [GitHub Repo Link Here](https://github.com/yourusername/outlink)
-- [Live Demo Link Here](https://YourLiveDemo.vercel.app)
+- [GitHub Repo Link Here](https://github.com/goutam-khowal/OutLink)
+- [Live Demo Link Here](https://out-link.vercel.app/)
 - Submit via the form or email:
   - **ciaancybertech@gmail.com**
   - **hr@ciaancybertech.com**
