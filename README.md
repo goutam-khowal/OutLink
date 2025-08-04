@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OutLink – Mini LinkedIn-like Community Platform
 
-## Getting Started
+OutLink is a modern platform where users can share updates, connect, and build a professional presence. Inspired by LinkedIn, it’s lightweight, streamlined, and designed for today’s developers and job-seekers.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **User Authentication:** Secure sign-up/login via Clerk.js (email \& password)
+- **User Profiles:** Name, email, and bio fields
+- **Public Feed:** Post, view, and read text-only public posts with author \& timestamp
+- **Profile Page:** View user profiles and their posts
+- **Responsive UI:** Clean, mobile-first layout
+
+## 🛠 Tech Stack
+
+- **Frontend \& Backend:** Next.js 14 (App Router, Server Actions)
+- **Authentication:** Clerk.js
+- **Database:** MongoDB
+- **API:** Next.js `/api` routes
+- **Styling:** Tailwind CSS + shadcn/ui
+
+## 🌐 Live Demo
+
+[Live App URL Here](https://YourLiveDemo.vercel.app)
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js (v18+)
+- MongoDB (URI - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) recommended)
+- Clerk project \& API keys ([Clerk Dashboard](https://dashboard.clerk.com/))
+
+### Installation
+
+1. **Clone the repository:**
+
+```sh
+git clone https://github.com/yourusername/outlink.git
+cd outlink
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Set environment variables:**
+   Create a `.env.local` file:
 
-## Learn More
+```
+MONGODB_URI=your_mongodb_connection_string
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Run the app locally:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. **Open:**
+   [http://localhost:3000](http://localhost:3000)
 
-## Deploy on Vercel
+## 🙋 Demo Login
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Register with any email and password or use Clerk-supported social login (if enabled).
+_Provide demo/test credentials here if set up._
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 Submission
+
+- [GitHub Repo Link Here](https://github.com/yourusername/outlink)
+- [Live Demo Link Here](https://YourLiveDemo.vercel.app)
+- Submit via the form or email:
+  - **ciaancybertech@gmail.com**
+  - **hr@ciaancybertech.com**
+
+## ✨ Features 
+
+- [ ] Image upload to posts
+- [ ] Like \& comment functionality
+- [ ] add/delete posts
+- [ ] User profile
+
+## ✨ Features To be Added (Future - Continous Dev)
+
+- [ ] Image upload to profile
+- [ ] Edit posts/comments
+- [ ] Add images/stickers to comments
+- [ ] Rich text for text inputs in posts and comments
+
+## 📚 License
+
+[MIT](LICENSE)
+
+**Built with ❤️ using Next.js, Clerk, and MongoDB**
