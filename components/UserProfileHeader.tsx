@@ -1,7 +1,8 @@
 import React from "react";
 import ProfilePhoto from "./shared/ProfilePhoto";
+import type { IPostDocument } from "@/models/post.model";
 
-const UserProfileHeader = ({ user }: { user: any }) => {
+const UserProfileHeader = ({ user }: { user: IPostDocument }) => {
   console.log(user);
   const userData = user;
   return (

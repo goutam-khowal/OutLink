@@ -18,7 +18,7 @@ async function filteredPost(userId: string) {
 const UserProfile = async ({ params }: Props) => {
   const userPosts = await filteredPost(params.userId);
   console.log(params.userId);
-  console.log(userPosts);
+  console.log(typeof userPosts);
   return (
     <div className="flex-1 mt-14 pt-5">
       <UserProfileHeader user={userPosts[0].user} />
