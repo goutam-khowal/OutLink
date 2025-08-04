@@ -14,7 +14,7 @@ const AddPost = ({ user }: { user: any }) => {
   return (
     <div className="bg-white p-4 m-2 md:m-0 border-1 border-gray-300 rounded-lg">
       <div className="flex items-center gap-3">
-        <ProfilePhoto src={user?.imageUrl} />
+        <ProfilePhoto src={user?.imageUrl} userId={user?.id} />
         <Input
           type="text"
           placeholder="What's on your mind?"

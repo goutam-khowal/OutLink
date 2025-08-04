@@ -14,33 +14,39 @@ import { deletePostAction } from "@/lib/serveractions";
 
 const Post = ({ post }: { post: IPostDocument }) => {
   const user = useUser();
-  const src = post.user.profilePhoto ? post.user.profilePhoto : "";
+  let postUser;
+  if (post.user) {
+    postUser = post.user;
+  }
 
   return (
     <div className="bg-white my-2 mx-2 md:mx-0 rounded-lg border border-gray-300">
       <div className="flex gap-2 p-4 ">
-        <ProfilePhoto src={src} />
+        <ProfilePhoto
+          src={String(postUser?.profilePhoto)}
+          userId={String(postUser?.userId)}
+        />
 
         <div className="flex items-center justify-between w-full">
           <div>
             <h1 className="text-sm font-bold">
-              {post?.user?.firstName} {post?.user?.lastName}
-              {post?.user.userId == user.user?.id && (
+              {postUser?.firstName} {postUser?.lastName}
+              {postUser?.userId == user.user?.id && (
                 <Badge variant={"secondary"} className="ml-2">
                   You
                 </Badge>
               )}
             </h1>
             <p className="text-xs text-gray-500">
-              {post?.user.userId == user.user?.id
+              {postUser?.userId == user.user?.id
                 ? user?.user?.username
-                : post?.user?.userName}
+                : postUser?.userName}
             </p>
             <p className="text-xs text-gray-500">{timeAgo(post.createdAt)}</p>
           </div>
         </div>
         <div>
-          {user?.user?.id === post?.user?.userId ? (
+          {user?.user?.id === postUser?.userId ? (
             <Button
               size={"icon"}
               className="rounded-full"

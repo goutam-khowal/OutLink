@@ -27,9 +27,15 @@ export function readFileAsDataUrl(file: File | Blob): Promise<string> {
 }
 
 // created date handler
-export function timeAgo(date: Date | string): string {
+export function timeAgo(date: Date | string | undefined | null): string {
+  if (!date) return "unknown";
+
   const now = new Date();
   const past = typeof date === "string" ? new Date(date) : date;
+
+  if (!(past instanceof Date) || isNaN(past.getTime())) {
+    return "unknown";
+  }
 
   const diffMs = now.getTime() - past.getTime();
 

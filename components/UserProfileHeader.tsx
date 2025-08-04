@@ -1,0 +1,22 @@
+import React from "react";
+import ProfilePhoto from "./shared/ProfilePhoto";
+
+const UserProfileHeader = ({ user }: { user: any }) => {
+  console.log(user);
+  const userData = user;
+  return (
+    <div className="bg-white mb-2 mx-2 md:mx-0 rounded-lg border border-gray-300 px-3 py-6 flex flex-col">
+      <div className="w-full flex items-center justify-center">
+        <ProfilePhoto src={userData.profilePhoto} userId={userData.userId} />
+      </div>
+      <div className="flex flex-col items-center ">
+        <h1 className="font-bold text-lg">
+          {userData.firstName + " " + userData.lastName}
+        </h1>
+        <p className="text-sm text-gray-500">@{userData.userName}</p>
+      </div>
+    </div>
+  );
+};
+
+export default UserProfileHeader;

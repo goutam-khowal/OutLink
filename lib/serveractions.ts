@@ -9,6 +9,7 @@ import { v2 as cloudinary } from "cloudinary";
 import connectDB from "./db";
 import { revalidatePath } from "next/cache";
 import { Comment } from "@/models/comment.model";
+import { redirect } from "next/navigation";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_API_CLOUDNAME,
