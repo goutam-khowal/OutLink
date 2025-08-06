@@ -12,7 +12,7 @@ OutLink is a modern platform where users can share updates, connect, and build a
 
 ## 🛠 Tech Stack
 
-- **Frontend \& Backend:** Next.js 14 (App Router, Server Actions)
+- **Frontend \& Backend:** Next.js 15 (App Router, Server Actions)
 - **Authentication:** Clerk.js
 - **Database:** MongoDB
 - **API:** Next.js `/api` routes
