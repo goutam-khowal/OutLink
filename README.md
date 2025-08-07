@@ -35,7 +35,7 @@ OutLink is a modern platform where users can share updates, connect, and build a
 1. **Clone the repository:**
 
 ```sh
-git clone https://github.com/yourusername/outlink.git
+git clone https://github.com/goutam-khowal/outlink.git
 cd outlink
 ```
 
